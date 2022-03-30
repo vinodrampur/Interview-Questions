@@ -1,0 +1,115 @@
+Q1) What is an IAM?
+Ans: IAWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. 
+	 we use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
+	 
+Q2) What is a IAM Role? 
+Ans: An IAM role is an IAM entity that defines a set of permissions for making AWS service requests. 
+	 IAM roles are not associated with a specific user or group. Instead, trusted entities assume roles, 
+	 such as IAM users, applications, or AWS services such as EC2.
+
+Q3) How do i assume role?
+Ans: You assume an role by calling the AWS Security Token Service (STS) AssumeRole APIs 
+	 These APIs return a set of temporary security credentials that applications can then use to sign requests to AWS service APIs.
+	 
+Q4) What is the difference between IAM user and role?
+Ans: An IAM user has permanent long-term credentials and is used to directly interact with AWS services. 
+	 An IAM role does not have any credentials and cannot make direct requests to AWS services. 
+	 IAM roles are meant to be assumed by authorized entities, such as IAM users, applications, or an AWS service such as EC2.
+	 
+Q5) What is IAM role for an EC2 Instance? 
+Ans: IAM roles for EC2 instances enables your applications running on EC2 to make requests to AWS services such as Amazon S3, 
+	 Amazon SQS, and Amazon SNS without you having to copy AWS access keys to every instance. 
+	 
+	 
+Q6) Can i use the same role on multiple ec2 instances?
+Ans: Yes
+
+Q7) Can i change the role of a running instance
+Ans: Yes.  a role is usually assigned to an EC2 instance when you launch it, 
+	 a role can also be assigned to an EC2 instance that is already running. 
+	 see IAM Roles for Amazon EC2. You can also change the 
+	 permissions on the IAM role associated with a running instance, and the updated permissions take effect almost immediately.
+	 
+Q8) Can i associate more than one role to an instance?
+Ans: No. You can only associate one IAM role with an EC2 instance at this time. This limit of one role per instance cannot be increased.
+
+Q9) What is a IAM Policy simulator? 
+Ans: The IAM policy simulator is a tool to help you understand, test, and validate the effects of your access control policies.
+
+Q10) What is AWS MFA?   
+Ans: AWS multi-factor authentication (AWS MFA) provides an extra level of security that you can apply to your AWS environment. 
+	 You can enable AWS MFA for your AWS account and for individual AWS Identity and Access Management (IAM) 
+	 users you create under your account.
+	 
+Q11) What are AWS Policies? 
+
+
+Q12) What are the key elements of a policy? 
+Ans: The IAM infrastructure includesthe following elements:
+
+		• Terms  : The user, group, role, policy, and identity provider objects that are stored in IAM.
+		• Principal : A principal is a person or application that can make a request for an action or operation on an AWS resource.
+		• Request : When a principal tries to use the AWS Management Console that principal sends a request to AWS. 
+		• Authentication : A principal must be authenticated (signed in to AWS) using their credentials to send a request to AWS
+		• Authorization : 
+		• Actions : After your request has been authenticated and authorized, AWS approves the actions or operations in your request
+		• Resources : After AWS approves the operations in your request, they can be performed on the related resources
+					  within your account. A resource is an object that exists within a service. Examples include an Amazon
+					  EC2 instance, an IAM user, and an Amazon S3 bucket.
+
+
+Q13) I have created an ec2 instance and it doesn't have the permission to 
+	 perform the API call put object on S3 bucket what should I do? 
+	 
+Ans: Follow these steps to update a user's IAM permissions for console access to only a certain bucket or folder:
+
+	1.    Open the IAM console.
+
+	2.    From the console, open the IAM user or role that should have access to only a certain bucket.
+
+	3.    In the Permissions tab of the IAM user or role, expand each policy to view its JSON policy document.
+
+	4.    In the JSON policy documents, search for the policy that grants the user permission to the s3:ListAllMyBuckets action or 
+			to s3:* actions (all S3 actions).
+
+	5.    Modify the policy to remove permission to the s3:ListAllMyBuckets action.
+
+Note: If an attached user policy is allowing s3:* or Full Admin access with the "" resource, then the policy already includes the s3:ListAllMyBuckets permissions. Therefore, remove the "" resource. Instead, make sure that you're using one of the example policies listed in this article.
+
+	6.    Add permission to s3:ListBucket only for the bucket or folder that you want the user to access from the console.
+
+	The following example policy is for access to an S3 bucket:
+
+{
+   "Version":"2012-10-17",
+   "Statement":[
+      {
+         "Effect":"Allow",
+         "Action":["s3:ListBucket"],
+         "Resource":"arn:aws:s3:::DOC-EXAMPLE-BUCKET"
+      },
+      {
+         "Effect":"Allow",
+         "Action":["s3:PutObject","s3:GetObject"],
+         "Resource":"arn:aws:s3:::DOC-EXAMPLE-BUCKET/*"
+      },
+   ]
+}
+	 
+Q14) How do you allow users to gain acces to specific bucket?
+Ans: A Role needs to be attached with proper policy defined.  
+
+
+
+Q15) Explain various types of policies in AWS
+Ans:1. Identity Based Policy: Applicable to users, groups of users, and roles
+		● AWS Managed policy:
+		● Custom Managed Policy:
+		● Inline Policy
+	2. Resource Based policy: Attach to a resource such as an Amazon S3 bucket
+	3. Session based Policy: create a temporary session for a role or federated user
+	
+	
+	
+	
+	
