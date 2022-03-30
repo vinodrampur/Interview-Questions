@@ -1,0 +1,237 @@
+Q1) What is vpc?
+Ans:VPC stands for Virtual Private Cloud.VPC is a logically isolated area of the AWS cloud where you can launch AWS resources in a virtual network.
+
+Q2) What are the components of VPC?
+Ans:VPC network services include:
+		IPv4 and IPv6 address blocks
+		Subnet creation
+		Route tables
+		Internet connectivity
+		Elastic IP addresses (EIPs)
+		Network/subnet security
+	
+Q3) What do you know about vpc peering?
+Ans:A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses.
+	Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between 
+	your own VPCs, or with a VPC in another AWS account.
+	
+Q4)What is stateful and stateless firewall?
+Ans:Stateful: Means if any changes applying incoming rules automatically appy to the outgoing rues.
+	Satteless: Means if any changes applying to incoming rule will not be apply to the outgoing rule. 
+
+Q5)Does transitive peering is allowed in vpc?
+Ans:Not allowed in VPC peering, here only 1:1 connection establish.
+
+Q6)How are private instances accessed over the internet? 
+Ans:wih the help of NAT gate way we acces the internet by private instances.
+ 
+Q7)What is an elastic ip?
+Ans:elastic IP is assigning the static IP address for an EC2 instances.
+
+Q8)What is a vpc endpoint?
+Ans:Enables private connectivity to services hosted in AWS, from within your VPC without using an Internet Gateway, 
+	VPN, Network Address Translation (NAT) devices, or firewall proxies.
+
+Q9)What is the difference between public and a private subnet? 
+Ans:Public Subnet: Public subnet is accessed by other network outside the vpc
+					It is directly connected to internet
+	Private subnet: Private subnet is not accessed by other network outside vpc.
+					It is not directly connectd to internet. By using NAT gate way we can acces the internet, that is also one way.
+					
+Q10)Difference between natGateway and IGW? 
+Ans:NAT gate way is used to acces the private subnet to acces the internet 
+	Internet gate way here the public subnets are directly access the internet. 
+
+Q11)Difference between security group and NACL
+Ans: 
+							NACL (Network Access control list)									Security Group
+								   
+				1. firewall or protection for the subnet.							2. firewall to protect EC2 instances.
+				
+				2. These are stateless, 											3. These are stateful, which means any changes which are 
+					meaning any change applied to an incoming rule 						applied to an incoming rule is automatically applied 
+					isn’t automatically applied to an outgoing rule.					to a rule which is outgoing.
+				
+				3. It support allow rules and deny rules.							4. It support only allow rules.
+				
+Q12)How many subnets can you have with vpc?
+Ans:Currently you can create 200 subnets per VPC.
+
+Q13)How do you monitor your vpc 
+Ans:By using VPC flow logs we can monitor the VPC.
+	(VPC Flow Logs is used to capture information about the IP traffic going to and from network interfaces in your VPC.)
+
+Q14)Can i change the private ip address of an instance while it is running 
+Ans:No. The private IP address of an Amazon EC2 instance will never change. It will not change while an instance is running.
+
+Q15)Can i assign multiple ip adress to an instance 
+Ans:yes. Multiple IP addresses can be assigned and unassigned to network interfaces attached to running or stopped instances. 
+
+Q16)Can an ec2 instance with in vpc in one region access the ec2 instance residing in vpc other region? 
+Ans:Yes. Instances in one region can communicate with each other using Inter-Region VPC Peering
+
+Q17)In which subnet you will launch databases? 
+Ans:Private subnets
+
+Q18)What is an EC2 instance 
+Ans:EC2 instance is a virtual server for running applications on the Amazon Web Services (AWS).
+
+Q19)What is the difference between terminating an instance and stopping an instance. 
+Ans:
+						Termination																			Stop Instance		
+	When you terminate an EC2 instance, instance will no longer visible in aws environment		1. When you stop again we can start the instance whenever we want 									 				2. 	
+	Any data that was stored locally on the instance will be lost. 								2. Any data that was stored locally on the instance will be remain.			
+	Any attached EBS volumes will be detached and deleted.										3. Any attached EBS volumes will not be detached and deleted.		
+	
+
+Q20)What is ec2 root device volume used for 
+Ans:When an EC2 instance is launched from an AMI, 
+	the root device volume contains the image used to boot 
+	the instance—mainly the operating system, all the configured services, and applications.
+
+Q21)How to persist root device volume 
+Ans:to persist the root device volume when creating EC2 instance in the Add Storage page, deselect the Delete On Termination check box for the root volume.
+
+Q22)How to migrate an instance to another az 
+Ans:
+
+Q23)What is target group in load balancers
+Ans:EC2, lambda functions, and IP adresses
+	(A target group tells a load balancer where to direct traffic to : EC2 instances, fixed IP addresses; or AWS Lambda functions, amongst others.)
+
+Q24)What is difference between ELB and autoscaling group 
+Ans:							
+								ELB( Elastic Load Balancer)												     autoscaling group	
+								
+	1. distributes the traffic load evenly across the available EC2 						1. Auto Scaling increases or decreases the no. of 								
+		instances present in the target groups and they 									   available instances as per the scaling policy mentioned,
+		connect the traffic to appropriate Target Groups.
+		
+	2. ELB also monitors the health of EC2 instances and routes the 						2. It is the work of Auto-Scaling to increase the instance 
+		traffic to a healthy instance only.													   when the Threshold value is exceeded
+		
+	3. If it seens not healthy it will divert the request to the some other 				3. It remove the instances when they are not being utilized.
+		available instance. 
+	
+
+Q25)Have u worked on load balancer 
+Ans:yes. Choose an Application Load Balancer when you need a flexible feature set for your applications with HTTP and HTTPS traffic.
+	Operating at the request level, Application Load Balancers provide advanced routing and visibility features targeted at application architectures, 
+	including microservices and containers.
+	
+Q26)What is the use of health check feature in load balancer 
+Ans: Load Balancers use active and passive health checks to determine whether a target is available to handle requests. 
+	 By default, each load balancer node routes requests only to the healthy targets.
+
+Q27)Can we change the public ip address of an running instance 
+Ans:No. You cannot manually associate or disassociate a public IP (IPv4) address from your instance.
+
+Q28)If you have lost the public key how do u connect to the instance
+Ans:
+
+Q29)What is an AMI 
+Ans:An AMI is a template that contains the software configuration (operating system, application server, and applications) required to launch your instance.
+
+Q30)Difference between AMI and instance snapshot
+Ans:AMI is is backup of the entire EC2 instance that might have multiple attached volumes, exactly like virtual machines.
+	Instance Snapshot is a point in time backup of specific volume.
+	
+Q31)What is autoscaling how it works 
+Ans:Auto Scaling increases or decreases the no. of available instances as per the scaling policy mentioned, It remove the instances when they are not being utilized.
+	It is the work of Auto-Scaling to increase the instance when the Threshold value is exceeded, 
+
+Q32)Can instances in AWS can be vertically scaled 
+Ans:Yes, To vertically scale an individual AWS EC2 instance up or down the instance has to be stopped, then the instance size changed, then restarted
+	
+Q33)What is horizontal scaling and vertical scaling 
+Ans:Horizontal scaling means that you scale by adding more ec2 machines into your pool of resources whereas 
+	Vertical scaling means that you scale by adding more power (CPU, RAM) to an existing ec2 machine.
+
+Q34)What are thr different types of ec2 instance 
+Ans:	General Purpose. 
+		Compute-Optimized. 
+		Memory-Optimized. 
+		Storage-Optimized. 
+		Accelerated Computing.
+
+Q35)What are status checks in an instance 
+Ans: 
+					System Status check																			Instance status check
+		1. These checks monitor the AWS systems   														1. These checks monitor your software and network 
+		   required to use this instance and ensure they are functioning properly						   configuration for this instance
+	 
+
+Q36)How to add an ebs volume for an ec2 instance 
+Ans:creat an instance, creat a volume(region specific) in volume tab, attach the volume to the instance, 
+	the run the commands lsblk to see the attached volume,
+	file -s /dev/xvdf to check the file system, 
+	for formating mkfs -t xfs /dev/xvdf,
+	craet a directory and 
+	mount the volume here using mount command
+	mount /dev/xvdf "path of the dir."  
+
+Q37)When should I use ebs , efs and s3
+Ans:			
+					EBS 										EFS 														S3
+			Hardly scalable									scalable 													scalable
+			Block storage									object storage 												object storage
+			Faster than efs and s3							faster than s3												slower
+			Accessible only via the given ec2 machine		accessible via several ec2 machines and aws services 		can be publicaly accessible
+			Is meant to be ec2 drive						good for shareable application and workloads 				good for storing backups
+			File syaytem interface 							web and file sysytem interface								web interface
+
+Q38)What are snapshots
+Ans:EBS Snapshots are a point-in-time copy of your data, and can be used to enable disaster recovery, migrate data across regions and accounts, 
+	and improve backup compliance.
+
+Q39)What are AWS Secret
+Ans:AWS Secrets Manager is a secrets management service that helps you protect access to your applications, services, and IT resources.
+
+Q40)Which database are supported in AWS secrets
+Ans:AWS Secrets Manager now transparently supports SSL connections 
+	when rotating database secrets for Amazon RDS MySQL, MariaDB, SQL Server, PostgreSQL, and MongoDB
+
+
+
+Q41) Differance between Application load balancer and network load balencer
+Ans:
+					Network Load balencer															Application load balencer
+
+		1. This is the distribution of traffic based on network variables, 				1. This is the distribution of requests based on multiple variables, 
+			such as IP address and destination ports.										from the network layer to the application layer.
+			
+		2. 	NLB — Layer 4 (TLS/TCP/UDP traffic), Static IPs.							2. This is a feature-filled L7 load balancer, 
+																							HTTP, and HTTPS listeners only.
+		3.  NLB just forward requests													3. ALB examines the contents of the HTTP 
+																							request header to determine where to route the request. 
+																							
+Q43) What is launch template?
+Ans: it is a feature which is used to reduce the step of creating the new insatnce by capturing all launching parameter 
+	 within a one source. 
+	 
+Q44)What is AWS cetificates? 
+Ans: AWS Certificate Manager (ACM) handles the complexity of creating, storing, and renewing 
+	 public and private SSL/TLS X.509 certificates and keys that protect your AWS websites and applications.
+	 
+	 ACM certificates can be used to establish secure communications across the internet or within an internal network. 
+	 
+	 1. AWS Certificate Manager (ACM)—This service is for enterprise customers who need a secure web presence using TLS. 
+		The most common application of this kind is a secure public website with significant traffic requirements.
+		
+	 2. ACM Private CA—This service is for enterprise customers building a public key infrastructure (PKI) 
+		inside the AWS cloud and intended for private use within an organization.
+		Certificates issued by a private CA cannot be used on the internet. For more information
+		
+Types of Load balancer:
+	Application load balancer:
+		 Used mainly for web application running http and https protocols.
+		 Operates at request level.
+		
+	Network Load balancer:
+		 Ultra-high Performance at very low latency.
+		 Operates at connection level, routing traffic to targets with in VPC.
+		 Can handle millions of requests per second.
+		
+	Classic load Balancer:
+		 Used for applications that were built in existing EC2 classic env.
+		 Operates both at connection & request level.
