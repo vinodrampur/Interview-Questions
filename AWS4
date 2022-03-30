@@ -1,0 +1,70 @@
+How is Amazon sqs is different from Amazon SNS
+Ans: SNS is fully managed messaging service for both application and application & application ans person for proper communication.
+     SNS is using pushing mechanism, whenever the producer send the message then it will push the message to consumer. 
+	 SQS is provides the queues of high throughput, system to system messaging.
+	 SQS is using poll model, SQS decouples the producer and consumer, whenever producer send the message then message will be stored in the 
+	 queuing system after that the consumer will poll the message from queuing system.
+	 
+Does Amazon SQS provide message ordering 
+Ans: yes. By using FIFO (First in First out) we can mentain the messagig order. 
+
+Does Amazon SQS guarantee delivery of messages 
+Ans: Yes. with the help of FIFO messaging system we can.
+
+How does SQS handles messages that can't be processed? 
+Ans: whenever the producer send message it will stayed in queuing system if that message is not processed by any 
+     consumer then that message will move to the dead letter queue. In DLQ further it will analysed, why this message is not processed.
+	 
+What is visibility time out 
+Ans: It is the amount of time where the message will visible to a perticular consumer for processing that message after that it is visible to all consumers.
+
+What is Amazon SQS long polling 
+Ans: In this we can set time for polling the mesage from queue. whenever  the message is enterd in to queue twith in that period then the consumer will poll that message.
+	 If we sued short polling microservice will continuously poll the messae even their is no messages. 
+	 it is costly process each and every poll will be charged.
+	 
+Can i convert my existing standard queue to a FIFO queue? 
+Ans: No. 
+
+Do Amazon SQS FIFO queues supports multiple producers 
+Ans: yes. multiple producers can send the messages to the queue but when we use FIFO then the messages will be in queue. 
+
+How can i secure the message in the queue 
+Ans: by encrypting the messages to protect in the queue
+
+What is the difference between SSE-SQS and SSE-KMS
+Ans:
+1. SSE -SQS : In this type encryption will be done by server side
+2. SSE-KMS: Here the customer produces the key and encrypt data. 
+
+How long I can keep my mesages in SQS 
+Ans: 60 sec to max 14 days we hac=ve to keep the messages in the queue.
+
+How do i configure the maximum message size for SQS 
+Ans: The message size from 1Byte to 256 KB size messages we can send.
+ 
+Is there any size limit for the message in the SQS 
+Ans: The message size from 1Byte to 256 KB size messages we can send. if it is more than 256KB the we can store the messages in java-extended client library to store messages and that also max 
+What are dead letter queues gb size we can store.
+
+Can you explain how u have integrated SQS in you previous project 
+Ans: 
+What is SNS 
+Ans: SNS is simple notification service for application and application and between application and person for proper communication.
+SNS is using push mechanism to deliver the messages to the consumers. 
+
+What are topics and subscription in an SNS 
+Ans: in this topics are: FIFO, standard
+	 In this subsriptions are: E-mail, Messages, Http, Https, lamda, SQS
+	 
+What are the different delivery formats for receiving notifications 
+Ans: HTTP, E-Mail, SQS, Json etc.
+
+Can you explain a use case where SNS is linked with other service to push the to end users
+Ans: 
+What is KMS service 
+Ans: KMS is Key management service in this customer is creating a master key for encryption of data.
+
+Whats the difference between customer managed key and AWS managed keys
+Ans: In customer managed key customer is creating a master key for encryption of data.
+	 In aws managed key aws will take care of creating and encrypting data and key for decryption of data. 
