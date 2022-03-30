@@ -1,0 +1,98 @@
+Q1) What is aws cloud trial?
+Ans: cloudtrail is auditing tool which is used to records user and api activity on aws resources.
+
+Q2) What are the benefits of cloud trail?
+Ans: CloudTrail helps you prove compliance, improve security posture, and consolidate activity records across regions and accounts. 
+	 CloudTrail provides visibility into user activity by recording actions taken on your account. 
+	 CloudTrail records important information about each action, including who made the request, the services used, the actions performed, 
+	 parameters for the actions, and the response elements returned by the AWS service. 
+	 
+Q3) Does the CloudTrail Event History show all account activity within my account?
+Ans) AWS CloudTrail will only show the results of the CloudTrail Event History for the current region you are viewing for the last 90 days,
+	 For a complete record of account activity, including all management events, data events, and read-only activity, you must configure a CloudTrail trail.
+
+Q4) What search filters can I use to view my account activity?
+Ans: You can specify Time range and one of the following attributes: 
+	 Event name, 
+	 User name, 
+	 Resource name, 
+	 Event source, 
+	 Event ID, and 
+	 Resource type.
+	
+Q5) What additional cloud trail features are available by creating our own trails?
+Ans) Set up a CloudTrail trail to deliver your CloudTrail events to Amazon S3, Amazon CloudWatch Logs, and Amazon CloudWatch Events. 
+	 This enables you to leverage features to help archive, analyze, and respond to changes in your AWS resources.
+	 
+Q6) Are API calls made from the AWS Management Console recorded?
+Ans: Yes. CloudTrail records API calls made from any client. The AWS Management Console, AWS software development kits (SDKs), 
+	 command line tools, and higher-level AWS services call AWS APIs, so these calls are recorded.
+	 
+Q7) How many trails can i setup in an aws region?
+Ans: You can create up to five trails in an AWS region. A trail that applies to all regions exists in each region and is counted as one trail in each region.
+
+Q8) Difference between data events and management events?
+Ans: Management events: Management operations performed on AWS
+	 data events: ou can now record all API actions on S3
+	 Objects and receive detailed information such as the AWS account of the caller, IAM user role
+	 of the caller, time of the API call, IP address of the API, and other details
+	 
+Q9) What is Amazon s3 data events? How do i record  them? 
+Ans: Amazon S3 data events represent API activity on Amazon S3 Objects. 
+	 To get CloudTrail to record these actions, you specify a S3 bucket in the data events section when creating a new trail or modifying an existing one. 
+	 
+Q10) What are cloud trail insights events?
+Ans: AWS CloudTrail Insights helps AWS users identify and respond to unusual activity associated with write API calls.
+
+Q11) What is a cloud watch? 
+Ans: Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS.
+
+Q12) How do you monitor a vpc using cloud watch?
+Ans: VPC Flow logs can capture IP traffic flow information for the network interfaces associated with your resources. 
+
+Q13) What is Amazon cloud watch logs? 
+Ans: Amazon CloudWatch Logs lets you monitor and troubleshoot your systems and applications using your existing system, application and custom log files.
+	 For example, you could set an alarm on the number of errors that occur in your system logs, 
+	 You can view the original log data to see the source of the problem.
+
+
+Q14) How long does  logs are stored in cloud watch? 
+Ans: By default, CloudWatch Logs will store your log data indefinitely. You can change the retention for each Log Group at any time.
+
+Q15) What can i measure with Amazon cloud watch metrics? 
+Ans: Metrics are provided automatically for a number of AWS products and services, 
+	 including Amazon EC2 instances,
+	 EBS volumes,
+	 DynamoDB tables, 
+	 Auto Scaling groups,
+	 
+Q15) Can we delete any metrics in cloud watch? 
+Ans) CloudWatch does not support metric deletion. 
+	 Metrics expire based on the retention schedules.
+	 
+Q16) Can i access the metrics for a terminated instance?
+Ans: Yes. CloudWatch stores metrics for terminated EC2 instances for 15 months.
+
+Q17) What types of cloud watch alaram we can set? 
+Ans: You can create an alarm to monitor 
+	 you can create alarms on an Amazon EC2 instance CPU utilization, DynamoDB table throughput, SQS queue length, s3 services.
+
+
+Q18) What actions can i take from a cloud watch alaram?
+Ans: When you create an alarm, you can configure it to perform one or more automated actions when the metric you chose to monitor exceeds a threshold you define.
+	 For example, you can set an alarm that sends you an email, publishes to an SQS queue, 
+	 stops or terminates an Amazon EC2 instance, or executes an Auto Scaling policy. 
+	 
+Q19) What is cloud watch events?
+Ans: Amazon CloudWatch Events (CWE) is a stream of system events describing changes in your AWS resources. 
+	 provide a more complete picture of the health and state of your applications. 
+	 
+Q20) What is the difference between cloud watch and cloud trial?
+Ans:     Cloudwatch                                                             Cloudtrail 
+
+		1. It is a monitoring tool 											1. It is a auditing tool
+		2. It is used to monitor the resources of aws account 				2. It is used to track the user and API usage 
+		3. we can monitor in terms of matric, logs,alarms, events 			3. we can audit based on event history and by creating trails.
+		
+Q21) Which service in AWS can we use for real time monitoring?
+Ans: cloud watch log used for real time monitoring.
