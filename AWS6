@@ -1,0 +1,21 @@
+Q: What is Amazon S3?
+Ans: Amazon S3 is object storage built to store and retrieve any amount of data from anywhere.
+
+Q: What can I do with Amazon S3?
+Ans: Amazon S3 provides a simple web service interface that you can use to store and retrieve any amount of data, at any time, from anywhere.
+
+Q: What kind of data can I store in Amazon S3?
+Ans: You can store virtually any kind of data in any format.
+
+Q: How is Amazon S3 data organized?
+Ans: Amazon S3 is a simple key-based object store. When you store data, you assign a unique object key that can later be used to retrieve the data.
+
+Q:  Where is my data stored?
+Ans: You specify an AWS Region when you create your Amazon S3 bucket. 
+
+Q:  In which parts of the world is Amazon S3 available?
+Ans: Amazon S3 is available in AWS Regions worldwide, and you can use Amazon S3 regardless of your location.
+
+Q: What are Amazon S3 Event Notifications?
+Ans: You can enable Amazon S3 Event Notifications and receive them in response to specific events in your S3 bucket, such as PUT, POST, COPY, and DELETE events.
+
