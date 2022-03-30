@@ -1,0 +1,60 @@
+Q1) Difference between IASS PASS and SASS?
+Ans: 
+			IASS: 													PASS										SASS
+
+1.	Infrastructure as a services.						1. Platform as a services						1. Software as a service
+
+2.	IAAS is used by network architects.					2. PAAS is used by developer.					2. It is used by end users
+
+3.	IAAS give access to the resources like 				3. PAAS give access to run time 				3. SAAS give access to the end user.
+	virtual machines and virtual storage.				   environment to deployment and 
+														   development tools for application. 
+														   
+4. 	It is popular between developer and 				4. It popular between developer 				4. it is popular betw0een consumer 							
+	researchers.										   who focus on the development of 					and company
+														   apps and scripts.
+	
+	
+Q2) What is AWS Region? 
+Ans: Which is a physical location around the world where we cluster data centers.
+
+Q3)What is an availability zone?
+Ans: AZ's are one or more decreate data centers with redundant power,networking and connectivity in aws region.
+
+Q4) What are the ways in which we can access aws ?
+Ans: 1. AWS console (by using username and password when we are going to crete account) 
+	 2. AWScli: Command line interface (It is accessed by using access key and secutity key) 
+	 3. SDK :   Software development kit (It is a collection of softwares used for developing applications for a specific device or operating system)
+
+Q5) What is an IAM?
+
+Ans: IAM is a identity and access managemnet: it is a framework of business process, policies and technologies that facilitate the management
+	 of electroninc and digital identity. 
+	 
+Q6) What is a policy? 
+Ans: A policy is an object in AWS that, when associated with an identity or resource,defines their permissions. 
+	 AWS evaluates these policies when an IAM user or role makes a request. 
+	 Permissions in the policies determine whether the request is allowed or denied.
+	 AWS supports six types of policies: 
+	 1. identity-based policies, 
+	 2. resource-based policies, 
+	 3. permissions boundaries, 
+	 4. Organizations SCPs, 
+	 5. ACLs, and 
+	 6. session policies.
+	 
+Q7) Difference between customer managed policy and aws managed policy? 
+Ans: 
+				Customer policies						                  				AWS managed policies	
+							
+	1.  A Customer Managed Policy is a standalone 							1.   A Managed Policy is an IAM policy which is 
+		policy that you create and administer inside 							 created and administered by AWS.
+		your own AWS account.
+		
+	2.	You can attach this policy to multiple users,						2.  A AWS Managed Policy can be attached to multiple 
+		groups, and roles; but only within your own account.					users, groups, or roles within the same AWS account 
+																				and across different accounts.
+		
+	3.  In this we can assign approprate permission 						3.  These AWS-provided policies allow you to assign 
+		to the users, groups and roles											appropriate permissions to your users, groups, and 
+																				roles without having to write the policy yourself.
