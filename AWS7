@@ -1,0 +1,54 @@
+Q1) What is cloud formation?
+Ans: AWS CloudFormation is a service that helps you model and set up your AWS resources 
+	 so that you can spend less time managing those resources and more time focusing on your applications that run in AWS.
+
+Q2) what is stack?
+Ans: A stack is a collection of AWS resources that you can manage as a single unit. 
+	In other words, you can create, update, or delete a collection of resources by creating, updating, or deleting stacks.
+	
+Q3) What is Lambda function?
+Ans:AWS Lambda lets you run code without provisioning or managing servers.
+	
+Q4) 
+Ans: A trigger is a Lambda resource in another service that you configure to invoke your 
+	 function in response to lifecycle events, external requests, or on a schedule.
+	 Destination is a feature that provides visibility into Lambda function invocations and routes the execution results to AWS services,
+	
+Q5)difference between relational and non relational database
+Ans:
+		relational databade														
+		
+1. They work with structured data.
+
+2. Relationships in the system have constraints, which promotes a high level of data integrity.
+
+3. There are limitless indexing capabilities, which results in faster query response times.
+
+4. They are excellent at keeping data transactions secure.
+
+5. They provide the ability to write complex SQL queries for data analysis and reporting.
+
+6. Their models can ensure and enforce business rules at the data layer adding a level of data integrity not found in a non-relational database.
+
+7. They are table and row oriented.
+
+8. They Use SQL (structured query language) for shaping and manipulating data, which is very powerful. 
+	SQL database examples: MySql, Oracle, Sqlite, Postgres and MS-SQL.
+	
+	
+	non relational database
+	
+	
+1. They have the ability to store large amounts of data with little structure.
+
+2. They provide scalability and flexibility to meet changing business requirements.
+
+3. They provide schema-free or schema-on-read options.
+
+4. They have the ability to capture all types of data “Big Data” including unstructured data.
+
+5. They are document oriented.
+
+5. NoSQL or non-relational databases examples:MongoDB, Apache Cassandra, Redis, Couchbase and Apache HBase.
+
+6.They are best for Rapid Application Development.
